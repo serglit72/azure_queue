@@ -1,18 +1,18 @@
 name: Everyday azure check
 
 on: [push]
-#   schedule:
-#      - cron: '3 * * * *'
-  
+
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
-      - uses: actions/setup-python@v1
-        with:
-          python-version: 3.7
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
 #       - name: Install dependencies
 #         run: |
 #           python -m pip install --upgrade pip
@@ -22,8 +22,8 @@ jobs:
 #           pip install flake8
 #           flake8 .
           
-      - name: Checkout the python version
-        run: python -c "import sys; print(sys.version)"
+    - name: Checkout the python version
+      run: python -c "import sys; print(sys.version)"
       
 #       - name: Running my script
 #         run: |
