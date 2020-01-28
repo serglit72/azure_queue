@@ -1,2 +1,1 @@
-argparse,base64,sys
-azure.storage.queue
+azure-storage-queue==12.1.0
