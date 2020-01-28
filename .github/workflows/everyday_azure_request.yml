@@ -1,8 +1,8 @@
-name: Everyday_azure_request
+name: Everyday azure check
 
-on:
-  schedule:
-     - cron: '3 * * * *'
+on: [push]
+#   schedule:
+#      - cron: '3 * * * *'
   
 jobs:
   build:
