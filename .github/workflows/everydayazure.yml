@@ -1,10 +1,10 @@
 name: Everyday azure check
 
-on: [push]
-# on:
-#   schedule:
-#     # * is a special character in YAML so you have to quote this string
-#   - cron: '0 0 * * *' # check on 00:00 UTC everyday
+# on: [push]
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+  - cron: '0 0 * * *' # check on 00:00 UTC everyday
   
 jobs:
   checkout_Azure:
