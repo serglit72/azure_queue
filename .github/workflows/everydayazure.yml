@@ -7,7 +7,7 @@ on:
   - cron: '0 20 * * *' # check on 20:00 UTC everyday
   
 jobs:
-  checkout_Azure:
+  auto_checkout_Azure:
 
     runs-on: ubuntu-latest
 
