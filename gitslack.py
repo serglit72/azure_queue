@@ -1,7 +1,7 @@
 import requests
 import json
 
-#WEB_HOOK_URL = "https://hooks.slack.com/services/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"
+web_hook_url = "https://hooks.slack.com/services/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"
 actions_api = "https://api.github.com/repos/serglit72/azure_queue/actions/runs"
 headers = {'Content-Type':'application/json'}
 
@@ -46,4 +46,4 @@ slack_msg = {
     }
     ]
 }
-requests.post(WEB_HOOK_URL,data=json.dumps(slack_msg))
+requests.post(web_hook_url,data=json.dumps(slack_msg))
