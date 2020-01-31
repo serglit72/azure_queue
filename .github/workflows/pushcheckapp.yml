@@ -43,6 +43,10 @@ jobs:
       run: |
         python queue_python.py
     
+    - uses: actions/checkout@v1
     - name: sending result to Slack
       run: |
         python gitslack.py
+      env:
+        web_hook_url: ${{ secrets.WEB_HOOK_URL }}
+    
