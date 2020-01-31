@@ -4,7 +4,7 @@ name: Everyday azure check
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-  - cron: '0 20 * * *' # check on 20:00 UTC everyday
+  - cron: '0 15 * * *' # check on 20:00 UTC everyday
   
 jobs:
   auto_checkout_Azure:
