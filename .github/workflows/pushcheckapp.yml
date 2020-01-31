@@ -42,3 +42,7 @@ jobs:
     - name: Running Azure script
       run: |
         python queue_python.py
+    
+    - name: sending result to Slack
+      run: |
+        python gitslack.py
