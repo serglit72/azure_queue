@@ -1,30 +1,39 @@
 import requests
 import json
 
-web_hook_url = "https://hooks.slack.com/services/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"
+#WEB_HOOK_URL = "https://hooks.slack.com/services/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"
 actions_api = "https://api.github.com/repos/serglit72/azure_queue/actions/runs"
 headers = {'Content-Type':'application/json'}
 
 get_report = requests.get(url=actions_api,headers=headers)
 report = get_report.json()
+total = report["total_count"]
 last_id = report["workflow_runs"][0]["id"]
-event = report["workflow_runs"][0]["event"]
-status = report["workflow_runs"][0]["status"]
-conclusion = report["workflow_runs"][0]["conclusion"]
 
+workflow = report["workflow_runs"]
+
+for i in range(total):
+    if workflow[i]["event"]=="schedule":
+        event = report["workflow_runs"][i]["event"]
+        status = report["workflow_runs"][i]["status"]
+        conclusion = report["workflow_runs"][i]["conclusion"]
+        timestamp = report["workflow_runs"][i]["created_at"]
+        p_event = "Scheduled on 15:00 UTC run On "+event+" and "+status+" with "+conclusion.upper()
+        print(p_event)
+        break
 
 slack_msg = {
     "attachments":[{
         "color":"good",
         "fields":[
             {
-            "title":conclusion,
-            "value":event,
+            "title":timestamp,
+            "value":p_event,
+            "short":False
             }
             ]
             }
-        ],
-        
+        ],   
     "blocks": 
     [
     {
@@ -32,9 +41,9 @@ slack_msg = {
     "text": 
         {
         "type": "mrkdwn",
-        "text": "Hello, I'm Assistant for  *azure_queue* .\n\n *Actions results :* "
+        "text": " *Actions results :* for *azure_queue* ."
         }
     }
     ]
 }
-requests.post(web_hook_url,data=json.dumps(slack_msg))
+requests.post(WEB_HOOK_URL,data=json.dumps(slack_msg))
