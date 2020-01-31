@@ -47,5 +47,4 @@ slack_msg = {
     ]
 }
 message = json.dumps(slack_msg)
-print(type(message))
 requests.post(web_hook_url,data=message)
