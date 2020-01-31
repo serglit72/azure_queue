@@ -46,4 +46,6 @@ slack_msg = {
     }
     ]
 }
-requests.post(web_hook_url,data=json.dumps(slack_msg))
+message = json.dumps(slack_msg)
+print(type(message))
+requests.post(web_hook_url,data=message)
