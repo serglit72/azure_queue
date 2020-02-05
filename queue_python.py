@@ -10,9 +10,10 @@ from azure.storage.queue import QueueServiceClient
 parser = argparse.ArgumentParser(description='Script for running acceptance test on Kaspersky side')
 
 parser.add_argument("--InfraName", default="AF")
-parser.add_argument("--InfraEnv",  default="Prod")
-parser.add_argument("--InfraVer",  default="1.0.0.0.0")
-
+parser.add_argument("--InfraEnv",  default="Beta")
+#parser.add_argument("--InfraEnv",  default="Prod")
+#parser.add_argument("--InfraVer",  default="1.0.0.0.0")
+parser.add_argument("--InfraVer",  default="0.7.0.24.0")
 args = parser.parse_args()
 
 tmp = {'InfraName': args.InfraName, 'InfraEnvironment': args.InfraEnv, 'InfraReleaseVersion': args.InfraVer}
