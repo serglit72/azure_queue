@@ -50,7 +50,7 @@ jobs:
    
     - uses: actions/checkout@v2
     - name: sending result to Slack
-      run: |
-        python gitslack.py
       env:
         web_hook_url: ${{ secrets.WEB_HOOK_URL }}
+      run: |
+        python gitslack.py ${{ secrets.WEB_HOOK_URL }}
