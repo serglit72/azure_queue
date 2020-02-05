@@ -19,7 +19,7 @@ for i in range(total):
         status = report["workflow_runs"][i]["status"]
         conclusion = report["workflow_runs"][i]["conclusion"]
         timestamp = report["workflow_runs"][i]["created_at"]
-        p_event = "Scheduled on 15:00 UTC run On "+event+" and "+status+" with "+conclusion
+        p_event = "Scheduled on 15:00 UTC run On "+str(event)+" and "+str(status)+" with "+str(conclusion).upper()
         print(p_event)
         break
 
