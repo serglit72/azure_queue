@@ -23,7 +23,7 @@ for i in range(total):
         print(p_event)
         break
 
-if status == "success":
+if conclusion == "success":
     colorr = "good"
 else:
     colorr = "danger"
