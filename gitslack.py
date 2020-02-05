@@ -1,9 +1,8 @@
 import requests
 import json
-import os
+import sys
 
-web_hook_url = ['WEB_HOOK_URL']
-# web_hook_url = os.environ.get('INPUT_WEB_HOOK_URL')
+web_hook_url = sys.argv[1]
 actions_api = "https://api.github.com/repos/serglit72/azure_queue/actions/runs"
 headers = {'Content-Type':'application/json'}
 
