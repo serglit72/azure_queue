@@ -51,6 +51,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: sending result to Slack
       env:
-        web_hook_url: ${{ secrets.WEB_HOOK_URL }}
+        web_hook_url: ${{ secrets.SLACK_PRIVATE_URL }}
       run: |
-        python gitslack.py ${{ secrets.WEB_HOOK_URL }}
+        python gitslack.py ${{ secrets.SLACK_PRIVATE_URL }}
