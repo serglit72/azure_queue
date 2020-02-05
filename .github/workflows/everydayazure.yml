@@ -47,10 +47,31 @@ jobs:
     - name: Running Azure script
       run: |
         python queue_python.py
-   
+        
+  sending_Slack_message:
+    needs: auto_checkout_Azure
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
     - name: sending result to Slack
       env:
         web_hook_url: ${{ secrets.SLACK_PRIVATE_URL }}
-      if: github.event_name == 'pull_request' && github.event.action == 'unassigned'
+    - name: Install dependencies
       run: |
-        python gitslack.py ${{ secrets.SLACK_PRIVATE_URL }}
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Lint with flake8
+      run: |
+        pip install flake8
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Sending message to Slack     
+      run: |
+          python gitslack.py ${{ secrets.SLACK_PRIVATE_URL }}
