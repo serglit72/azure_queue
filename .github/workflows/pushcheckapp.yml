@@ -39,9 +39,9 @@ jobs:
 #       run: |
 #         python -c 'import sys; print(sys.version)'
     
-    - name: Running Azure script
-      run: |
-        python queue_python.py
+#     - name: Running Azure script
+#       run: |
+#         python queue_python.py
     
     - name: sending results to Slack
       env:
