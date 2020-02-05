@@ -47,5 +47,5 @@ jobs:
       env:
         web_hook_url: ${{ secrets.WEB_HOOK_URL }}
       run: |
-        python gitslack.py
+        python gitslack.py web_hook_url
       
