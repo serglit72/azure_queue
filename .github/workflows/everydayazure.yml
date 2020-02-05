@@ -51,6 +51,7 @@ jobs:
         
   sending_Slack_message:
     needs: auto_checkout_Azure
+    if: success()
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
