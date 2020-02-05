@@ -48,7 +48,6 @@ jobs:
       run: |
         python queue_python.py
    
-    - uses: actions/checkout@v2
     - name: sending result to Slack
       env:
         web_hook_url: ${{ secrets.SLACK_PRIVATE_URL }}
