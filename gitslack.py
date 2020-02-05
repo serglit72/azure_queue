@@ -23,29 +23,11 @@ for i in range(total):
         print(p_event)
         break
 
-slack_msg = {
-    "attachments":[{
-        "color":"good",
-        "fields":[
-            {
-            "title":timestamp,
-            "value":p_event,
-            "short":False
-            }
-            ]
-            }
-        ],   
-    "blocks": 
-    [
-    {
-    "type": "section",
-    "text": 
-        {
-        "type": "mrkdwn",
-        "text": " *Actions results :* for *azure_queue* ."
-        }
-    }
-    ]
-}
-message = json.dumps(slack_msg)
+if status == "SUCCESS":
+    colorr = "good"
+else:
+    colorr="danger"
+slack_msg = {"attachments":[{"color":colorr,"fields":[{"title":timestamp,"value":p_event,"short":False}]}],
+                 "blocks":[{"type":"section","text":{"type": "mrkdwn","text":"*Actions results :* for *azure_queue* ."}}]}
+message = json.dumps(slack_msg)    
 requests.post(web_hook_url,data=message)
