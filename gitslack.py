@@ -14,11 +14,11 @@ last_id = report["workflow_runs"][0]["id"]
 workflow = report["workflow_runs"]
 
 for i in range(total):
-    if workflow[i]["event"]=="schedule" and workflow[i]["id"] == last_id:
-        event = report["workflow_runs"][i]["event"]
-        status = report["workflow_runs"][i]["status"]
-        conclusion = report["workflow_runs"][i]["conclusion"]
-        timestamp = report["workflow_runs"][i]["created_at"]
+    if workflow[i]["event"]=="schedule" and workflow[i]["status"] == "completed":
+        event = workflow[i]["event"]
+        status = workflow[i]["status"]
+        conclusion = workflow[i]["conclusion"]
+        timestamp = workflow[i]["created_at"]
         p_event = "Scheduled on "+timestamp+" run On "+str(event)+" and "+str(status)+" with "+str(conclusion).upper()
         print(p_event)
         break
