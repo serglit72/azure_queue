@@ -5,8 +5,8 @@ on:
   schedule:
     # * is a special character in YAML so you have to quote this string
 #   - cron: '0 15 * * *' # check on 15:00 UTC everyday
-#   - cron: '0/10 21 * * *' 
-  - cron: '* * * * *' # check on every 10 mins
+  - cron: '0/20 21 * * *' 
+#   - cron: '* * * * *' # check on every 10 mins
 jobs:
   auto_checkout_Azure:
 
