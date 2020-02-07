@@ -14,7 +14,7 @@ last_id = report["workflow_runs"][0]["id"]
 workflow = report["workflow_runs"]
 
 for i in range(total):
-    if workflow[i]["event"]=="schedule" && workflow[i]["conclusion"] == "success":
+    if workflow[i]["event"]=="schedule" and workflow[i]["conclusion"] == "success":
         event = report["workflow_runs"][i]["event"]
         status = report["workflow_runs"][i]["status"]
         conclusion = report["workflow_runs"][i]["conclusion"]
