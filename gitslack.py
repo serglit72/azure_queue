@@ -1,13 +1,13 @@
 import requests
 import json
 import sys
-from queue_python import message
+from queue_python import slack
 
 
 web_hook_url = sys.argv[1]
 actions_api = "https://api.github.com/repos/serglit72/azure_queue/actions/runs"
 headers = {'Content-Type':'application/json'}
-message = str(queue_python.message)
+message = str(queue_python.slack)
 
 get_report = requests.get(url=actions_api,headers=headers)
 report = get_report.json()
