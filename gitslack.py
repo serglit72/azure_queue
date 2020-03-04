@@ -20,7 +20,8 @@ for i in range(total):
         status = workflow[i]["status"]
         conclusion = workflow[i]["conclusion"]
         timestamp = workflow[i]["created_at"]
-        p_event = "Scheduled on "+timestamp+" run On "+str(event)+" and "+str(status)+" with "+str(conclusion).upper()
+#         p_event = "Scheduled on "+timestamp+" run On "+str(event)+" and "+str(status)+" with "+str(conclusion).upper()
+        p_event = azure_python.message
         print(p_event)
         break
 
@@ -30,5 +31,5 @@ else:
     colorr = "danger"
 slack_msg = {"attachments":[{"color":colorr,"fields":[{"title":timestamp,"value":p_event,"short":False}]}],
                  "blocks":[{"type":"section","text":{"type": "mrkdwn","text":"*Actions results :* for *azure_queue* ."}}]}
-message = json.dumps(slack_msg)    
-requests.post(web_hook_url,data=message)
+mssge = json.dumps(slack_msg)    
+requests.post(web_hook_url,data=mssge)
