@@ -1,7 +1,7 @@
 import requests
 import json
 import sys
-from queue_python import message
+import queue_python
 
 web_hook_url = sys.argv[1]
 actions_api = "https://api.github.com/repos/serglit72/azure_queue/actions/runs"
