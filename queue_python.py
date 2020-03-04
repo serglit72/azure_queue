@@ -15,11 +15,11 @@ parser.add_argument("--InfraEnv",  default="Beta")
 #parser.add_argument("--InfraVer",  default="1.0.0.0.0")
 parser.add_argument("--InfraVer",  default="0.7.1.0.rc2")
 args = parser.parse_args()
-
+ 
 tmp = {'InfraName': args.InfraName, 'InfraEnvironment': args.InfraEnv, 'InfraReleaseVersion': args.InfraVer}
 
 message = str(tmp)
-
+slack = message
 encodedBytes = base64.b64encode(message.encode('utf-8'))
 encodeMessage = str(encodedBytes, "utf-8")
 
