@@ -1,7 +1,7 @@
 import requests
 import json
 import sys
-import queue_python
+from queue_python import message
 
 
 web_hook_url = sys.argv[1]
