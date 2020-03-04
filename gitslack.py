@@ -1,7 +1,7 @@
 import requests
 import json
 import sys
-from azure_queue.queue_python import slack
+from queue_python import slack
 
 
 web_hook_url = sys.argv[1]
