@@ -6,6 +6,7 @@ import queue_python
 web_hook_url = sys.argv[1]
 actions_api = "https://api.github.com/repos/serglit72/azure_queue/actions/runs"
 headers = {'Content-Type':'application/json'}
+message = str(queue_python.message)
 
 get_report = requests.get(url=actions_api,headers=headers)
 report = get_report.json()
@@ -21,7 +22,7 @@ for i in range(total):
         conclusion = workflow[i]["conclusion"]
         timestamp = workflow[i]["created_at"]
 #         p_event = "Scheduled on "+timestamp+" run On "+str(event)+" and "+str(status)+" with "+str(conclusion).upper()
-        p_event = queue_python.message
+        p_event = message
         print(p_event)
         break
 
