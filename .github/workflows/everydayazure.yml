@@ -53,8 +53,6 @@ jobs:
     needs: auto_checkout_Azure
     if: success()
     runs-on: ubuntu-latest
-    env:
-      SLACK_PRIVATE_URL: ${{ secrets.WEB_HOOK_URL }}
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
