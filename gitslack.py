@@ -21,8 +21,7 @@ for i in range(total):
         status = workflow[i]["status"]
         conclusion = workflow[i]["conclusion"]
         timestamp = workflow[i]["created_at"]
-#         p_event = "Scheduled on "+timestamp+" run On "+str(event)+" and "+str(status)+" with "+str(conclusion).upper()
-        p_event = message
+        p_event = message # p_event = "Scheduled on "+timestamp+" run On "+str(event)+" and "+str(status)+" with "+str(conclusion).upper()
         print(p_event)
         break
 
