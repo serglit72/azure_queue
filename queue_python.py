@@ -19,7 +19,7 @@ args = parser.parse_args()
 tmp = {'InfraName': args.InfraName, 'InfraEnvironment': args.InfraEnv, 'InfraReleaseVersion': args.InfraVer}
 
 message = str(tmp)
-slack = message
+slack = args.InfraEnv+" v."+args.InfraVer
 encodedBytes = base64.b64encode(message.encode('utf-8'))
 encodeMessage = str(encodedBytes, "utf-8")
 
