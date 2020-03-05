@@ -54,7 +54,7 @@ jobs:
     if: success()
     runs-on: ubuntu-latest
     env:
-      SLACK_PRIVATE_URL: ${{ secrets.SLACK_PRIVATE_URL }}
+      SLACK_PRIVATE_URL: ${{ secrets.WEB_HOOK_URL }}
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
