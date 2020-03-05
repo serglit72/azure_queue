@@ -53,6 +53,8 @@ jobs:
     needs: auto_checkout_Azure
     if: success()
     runs-on: ubuntu-latest
+    env:
+      SLACK_PRIVATE_URL: ${{ secrets.SLACK_PRIVATE_URL }}
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
@@ -75,4 +77,4 @@ jobs:
     
     - name: Sending message to Slack     
       run: |
-        python gitslack.py ${{ secrets.WEB_HOOK_URL }}
+        python gitslack.py SLACK_PRIVATE_URL
