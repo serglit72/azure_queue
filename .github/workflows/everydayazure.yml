@@ -77,4 +77,4 @@ jobs:
     
     - name: Sending message to Slack     
       run: |
-        python gitslack.py SLACK_PRIVATE_URL
+        python gitslack.py ${{ secrets.SLACK_PRIVATE_URL }}
