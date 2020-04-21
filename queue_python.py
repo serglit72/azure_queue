@@ -13,10 +13,11 @@ parser.add_argument("--InfraName", default="AF")
 parser.add_argument("--InfraEnv",  default="Beta")
 #parser.add_argument("--InfraEnv",  default="Prod")
 #parser.add_argument("--InfraVer",  default="1.0.0.0.0")
-parser.add_argument("--InfraVer",  default="0.7.3.rc13")
+parser.add_argument("--InfraVer",  default="0.7.4.rc24")
+parser.add_argument("--Location", default="NL")
 args = parser.parse_args()
  
-tmp = {'InfraName': args.InfraName, 'InfraEnvironment': args.InfraEnv, 'InfraReleaseVersion': args.InfraVer}
+tmp = {'InfraName': args.InfraName, 'InfraEnvironment': args.InfraEnv, 'InfraReleaseVersion': args.InfraVer, 'Location': args.Location}
 
 message = str(tmp)
 slack = args.InfraEnv+" v."+args.InfraVer
