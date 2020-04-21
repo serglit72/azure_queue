@@ -6,7 +6,7 @@ import sys
 web_hook_url = sys.argv[1]
 actions_api = "https://api.github.com/repos/serglit72/azure_queue/actions/runs"
 headers = {'Content-Type':'application/json'}
-message = "BETA v.0.7.3.rc13"
+message = "BETA v.0.7.4.rc24"
 
 get_report = requests.get(url=actions_api,headers=headers)
 report = get_report.json()
