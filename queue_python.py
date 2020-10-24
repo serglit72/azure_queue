@@ -13,7 +13,7 @@ parser.add_argument("--InfraName", default="AF")
 parser.add_argument("--InfraEnv",  default="Beta")
 #parser.add_argument("--InfraEnv",  default="Prod")
 #parser.add_argument("--InfraVer",  default="1.0.0.0.0")
-parser.add_argument("--InfraVer",  default="0.8.1")
+parser.add_argument("--InfraVer",  default="0.8.2")
 parser.add_argument("--Location", default="NL")
 args = parser.parse_args()
  
